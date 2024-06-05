@@ -1,0 +1,8 @@
+EmployeeID,Name,Department,Role,HoursWorked,FullTime
+1,Bob Smith,Technology,Intern,10,PartTime
+2,Jane Brown,Receiving,FloorWorker,0,FullTime
+3,Tim Sagal,Receiving,FloorWorker,50,FullTime
+3,Ken Wahl,Receiving,FloorWorker,50,PartTime
+4,Alex Alexander Winston,Technology,Supervisor,5,FullTime
+5,Joseph O'Connor,Receiving,Manager,30,FullTime
+6,Sarah Towns,Sales,Executive,45,Fulltime
