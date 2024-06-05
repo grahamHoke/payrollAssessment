@@ -7,7 +7,7 @@ import java.util.*;
 
 import static com.company.Employee.employeeFromString;
 
-// TODO: Handle duplicate names, input validation, exception handling. Use constants and enums.
+// TODO: Handle duplicate names, input validation, exception handling. Use constants and enums. Beautify output.
 
 public class Main {
 
