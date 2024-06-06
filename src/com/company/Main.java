@@ -54,7 +54,8 @@ public class Main {
                 }
 
                 // Add to Sorted Employee List (3)
-                employeeListAlphabetical.put(currentEmployee.name, weeklyPay);
+                BigDecimal basepay = Role.calculateBasePay(currentEmployee);
+                employeeListAlphabetical.put(currentEmployee.name, basepay);
 
             }
 

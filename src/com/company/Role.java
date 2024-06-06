@@ -2,19 +2,16 @@ package com.company;
 
 import java.math.BigDecimal;
 
-public class Role {
+public abstract class Role {
     public static final String intern = "Intern";
     public static final String floorWorker = "FloorWorker";
     public static final String supervisor = "Supervisor";
     public static final String manager = "Manager";
     public static final String executive = "Executive";
 
-    public static BigDecimal calculateWeeklyPay(Employee employee){
+    public static BigDecimal calculateHourlyRate(String role){
         BigDecimal hourlyRate = BigDecimal.ZERO;
-        BigDecimal totalWeeklyPay = BigDecimal.ZERO;
-        BigDecimal adjustedHoursWorked = BigDecimal.ZERO;
-
-        switch (employee.role){
+        switch (role){
             case intern:
                 hourlyRate = BigDecimal.valueOf(10);
                 break;
@@ -31,6 +28,13 @@ public class Role {
                 hourlyRate = BigDecimal.valueOf(50);
                 break;
         }
+        return hourlyRate;
+    }
+    public static BigDecimal calculateWeeklyPay(Employee employee){
+        BigDecimal hourlyRate = calculateHourlyRate(employee.role);
+        BigDecimal totalWeeklyPay = BigDecimal.ZERO;
+        BigDecimal adjustedHoursWorked = BigDecimal.ZERO;
+
 
         // Full time workers get paid overtime (time and a half) for any hours worked in a week over 40hrs.
         BigDecimal hoursWorked = BigDecimal.valueOf(employee.hoursWorked);
@@ -49,5 +53,14 @@ public class Role {
         }
 
         return totalWeeklyPay;
+    }
+
+    public static BigDecimal calculateBasePay(Employee employee) {
+        BigDecimal hourlyRate = calculateHourlyRate(employee.role);
+        BigDecimal baseWeeklyPay = BigDecimal.ZERO;
+
+        BigDecimal hoursWorked = BigDecimal.valueOf(employee.hoursWorked);
+
+        return hoursWorked.multiply(hourlyRate);
     }
 }
